@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html layout:decorate="layouts/defaultLayout" xmlns:th="http://www.thymeleaf.org">
+ 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <div layout:fragment="content">
+ 
+ 
+ <div class="container mt-3 mb-3">
+ <form th:action="@{/orders/search}"  action="#" method="post" th:object="${searchModel}">
+ 
+  <div class="mb-3">
+    <label for="searchTerminput" class="form-label">Search for</label>
+    <input th:field="*{searchTerm}" type="text" class="form-control" id="searchTerminput" aria-describedby="searchHelp">
+    <div id="searchHelp" class="form-text">Give me a phrase or word to search for.</div>
+  </div>
+  
+  
+  
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+ 
+ </div>
+</body>
+</html>

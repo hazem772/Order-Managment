@@ -1,0 +1,48 @@
+<html layout:decorate="layouts/defaultLayout" xmlns:th="http://www.thymeleaf.org">
+ <div layout:fragment="content" class="container-xl">
+ 
+ <h2 th:text="${title}"></h2>
+  
+ <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">OrderNo</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Qty</th>
+      <th scope="col">Delete</th>
+      <th scope="col">Edit</th>  
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="order : ${orders}">
+      <td th:text="${order.id}"></td>
+      <td th:text="${order.orderNo}"></td>
+      <td th:text="${order.productName}"></td> 
+      <td th:text="${order.price}"></td> 
+      <td th:text="${order.quantity}"></td>
+      <td>
+		<form action="#" th:action="@{/orders/delete/}" th:object="${order}" method="post"> 
+		 <input name="id" type="hidden" th:value="${order.id}">
+		 <input name="orderNo"type="hidden" th:value="${order.orderNo}">
+		 <input name="productName"type="hidden" th:value="${order.productName}">
+		 <input name="price" type="hidden" th:value="${order.price}">
+		 <input name="quantity" type="hidden"  th:value="${order.quantity}">
+		 <button class="btn btn-danger" type="submit" name="deleteItem">Delete</button>
+		</form>
+	   </td>
+	   <td>
+		<form action="#" th:action="@{/orders/editForm/}" th:object="${order}" method="post"> 
+			<input name="id" type="hidden" th:value="${order.id}">
+			<input name="orderNo"type="hidden" th:value="${order.orderNo}">
+			<input name="productName"type="hidden" th:value="${order.productName}">
+			<input name="price" type="hidden" th:value="${order.price}">
+			<input name="quantity" type="hidden"  th:value="${order.quantity}">
+			<button class="btn btn-secondary" type="submit" name="deleteItem">Edit</button>
+		</form>
+	   </td> 
+    </tr> 
+  </tbody>
+</table>
+</div> 

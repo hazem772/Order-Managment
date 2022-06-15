@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" th:href="@{/css/spa.css}">
+
+</head>
+  <body>
+  <div class="container" id="main-body">
+    <h2>Search</h2>
+<p>This is a single page application (SPA). </p>
+<p> will notice that there are no page refresh events. </p>
+<p>All data is handled through AJAX reqeusts to the server.</p>
+     <div id="search-form">
+       <div class="mb-3">
+      	 <label for="searchTerm" class="form-label">Search Term</label>
+    	 <input type="text" class="form-control" id="searchTerm" name="searchTerm" value="a">		
+       </div>
+       <div class="mb-3">
+      	 <button class="btn btn-primary" type="button" id="search-button"/>Search</button>
+       </div>
+	</div>
+    <p>If you click the "OK" button, the REST api will fetch data.</p>
+   
+     
+    <div id="entry-form" class="container">
+    <h2>Edit item</h2>
+     <div class="mb-3">
+    <label for="orderid" class="form-label">id</label>
+    <input type="text" class="form-control" id="orderid" aria-describedby="order id">
+     
+  </div>
+  <div class="mb-3">
+    <label for="ordernumber" class="form-label">Product Number</label>
+    <input type="text" class="form-control" id="ordernumber">
+  </div>
+   
+  <div class="mb-3">
+    <label for="orderproductname" class="form-label">Product Name</label>
+    <input type="text" class="form-control" id="orderproductname">
+  </div>
+  
+  <div class="mb-3">
+    <label for="orderprice" class="form-label">Price</label>
+    <input type="text" class="form-control" id="orderprice">
+  </div>
+  <div class="mb-3">
+    <label for="orderquantity" class="form-label">Quantity</label>
+    <input type="text" class="form-control" id="orderquantity">
+  </div>
+  
+  <button id="form-ok" type="button" class="btn btn-primary">OK</button>
+    
+    
+  </div>
+   <div id="results-box"></div>
+  </div>
+   
+  </body>
+  <script th:src="@{/js/site.js}"></script>
+</html>

@@ -1,0 +1,51 @@
+body {
+	background-color:#5386e4;
+	padding:10px;
+	border:0;
+	border-radius:10px;
+}
+#results-box {
+	display: flex;
+	flex-wrap:wrap;
+}
+
+.single-order {
+	border:0;
+	border-radius:5px;
+	padding:10px;
+	flex-basis: 1; 
+	flex-grow:1;
+	width:200;
+	margin:10px;
+	background-color:#4c4b63;
+	color:white;
+	
+}
+
+#main-body {
+	background-color:#c3c3c3;
+}
+
+#entry-form {
+	background-color:#949396;
+	border:0px;
+	border-radius:10px;
+	padding:20px;
+	color:white;
+}
+
+#search-form {
+	background-color:#949396;
+	border:0px;
+	border-radius:10px;
+	padding:20px;
+	color:white;
+	width:50%;
+}
+.btn {
+	margin-left:10px;
+}
+
+/* color scheme from
+https://coolors.co/5386e4-4c4b63-949396-aba8b2-c3c3c3
+*/
